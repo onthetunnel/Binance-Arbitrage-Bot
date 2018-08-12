@@ -210,8 +210,7 @@ class BinanceArbBot:
 
     def quantity_errors_sell(self, qty, symbol, price):
         """
-        used to check if buy amount of base currecny will result in error
-
+        used to check if sell amount of base currecny will result in error
         """
         if qty < float(self.min_quantity[symbol]): # base coin amount
             return 'not enough to sell'
@@ -454,8 +453,8 @@ class BinanceArbBot:
             
 if __name__ == "__main__":
     
-    api_key = "gJ99gI9rvBWUlOoFVZuz6muzuPlcNp7QMVSV0FWZC8nqOJTYlv69cdbpr6dH21Al"
-    api_secret = "v1UMJznun6yPKdugXLZhfEvurs0KDwcySN7pjYgt3QChMjUYhWvw08zOv206Lm2S"
+    api_key = "copy and past here"
+    api_secret = "copy and paste here"
 
     client = Client(api_key, api_secret, {'timeout':600})
 
