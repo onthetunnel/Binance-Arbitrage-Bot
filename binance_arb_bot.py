@@ -9,6 +9,9 @@ import os
 from binance.client import Client
 from binance.websockets import BinanceSocketManager
 
+api_key = "copy and past here"
+api_secret = "copy and paste here"
+
 def floor(n, r):
     """
     n is float, r is int, returns string
@@ -453,9 +456,6 @@ class BinanceArbBot:
             
 if __name__ == "__main__":
     
-    api_key = "copy and past here"
-    api_secret = "copy and paste here"
-
     client = Client(api_key, api_secret, {'timeout':600})
 
     # the following are the three parameters that must be set
