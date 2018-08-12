@@ -13,4 +13,4 @@ You need to copy and paste your binance api key and secret into where it says `"
 
 # results
 
-This bot was earning about .3 ETH a day, from Jan - April of this year, when it abruptly stopped winning (probably due to too many other bots doing the same thing). The code, though, still has useful features and mostly could be used for any bot on Binance, regardless of trading strategy. In its current form it could eke out a profit in periods of exceptional volatility and with the parameter `expected_roi` set very high (over .004). 
+This bot was earning about .3 ETH a day, from Jan - April of this year. The code, though, still has useful features and mostly could be used for any bot on Binance, regardless of trading strategy. In its current form, it's unlikely to lose and could still eke out a profit in periods of exceptional volatility with the parameter `expected_roi` set very high (over .004). 
