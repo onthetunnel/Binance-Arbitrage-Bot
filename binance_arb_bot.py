@@ -4,8 +4,6 @@ __email__ = 'nathanezraschmidt@gmail.com'
 import time
 import math
 import threading
-import datetime
-import os
 from binance.client import Client
 from binance.websockets import BinanceSocketManager
 
