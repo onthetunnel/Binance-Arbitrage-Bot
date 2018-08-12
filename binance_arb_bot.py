@@ -456,12 +456,15 @@ if __name__ == "__main__":
     
     client = Client(api_key, api_secret, {'timeout':600})
 
-    # the following are the three parameters that must be set
-    
+    # Important: values for the following four variables should be set by user (somewhat account / user dependent), everything else shouldn't be altered
+
+    thread_num = 4 # number of trades to make simultaneously
     starting_amount = .2 # max quantity of ETH to be used per trade
     expected_roi = .0028 # expected roi for each trading sequence before fees, assuming buys and sells are made at predicted prices, should be between .0025 and .004
-                         # lower values result more trades, but lower ev per trade
+                         # lower values result in more trades, but lower ev per trade
+                        
     wait_time = 2 # number of seconds to wait after trading sequence finishes, used to minimize account getting temporarily disabled
+                    # if more than 4 threads (i.e., thread_num >= 4) should increase by 2 or 3 for each additional thread
 
     bab = BinanceArbBot(client, starting_amount=starting_amount, expected_roi=expected_roi, wait_time=wait_time)
 
@@ -494,13 +497,10 @@ if __name__ == "__main__":
 
     threading.Thread(target=bab.clean_up_buys).start() # start thread to clean up buy orders
     threading.Thread(target=bab.clean_up_alts).start() # start thread to clean sell alts in case of having failed to sell
-
-    thread_num = 4 # number of trades to make simultaneously
     
     def start_trading(thread_num):
         for i in range(thread_num):
             threading.Thread(target=bab.make_trades).start()
-
 
     start_trading(thread_num) # start running bot
     
