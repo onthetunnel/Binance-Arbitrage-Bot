@@ -9,4 +9,8 @@ In multiple threads, the bot loops a three part trade sequence which is 1) buy a
 # dependencies and use
 
 [python wrapper of the Binance API](https://github.com/sammchardy/python-binance) along with its dependencies. 
-You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). To see how to get the bot running, see the of code `if __name__ == "__main__":`. This bot was profitable, winning about .3 ETH a day, from Jan - April of this year, when it abruptly stopped winning (probably due to too many other bots doing the same thing). The code, though, still has useful features and mostly could be used for any bot on Binance, regardless of trading strategy. 
+You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). To see how to get the bot running, see the of code `if __name__ == "__main__":`. 
+
+# results
+
+This bot was earning about .3 ETH a day, from Jan - April of this year, when it abruptly stopped winning (probably due to too many other bots doing the same thing). The code, though, still has useful features and mostly could be used for any bot on Binance, regardless of trading strategy. In its current form it could eke out a profit in periods of exceptional volatility and with the parameter `expected_roi` set very high (over .004). 
