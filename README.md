@@ -9,4 +9,4 @@ In multiple threads, it loops a three part trade sequence which is 1) buy an alt
 # dependencies and use
 
 [python wrapper of the Binance API](https://github.com/sammchardy/python-binance) along with its dependencies. 
-Also need to copy and paste binance api key and secret into the module,  and have on Binance have ETH and BNB, and have the BNB option for paying fees selected. For guidelines and an example of how to run the script, see the portion of code following `if __name__ == "__main__":`.
+You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). For guidelines and an example of how to run the script, see the portion of code following `if __name__ == "__main__":`.
