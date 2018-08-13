@@ -21,7 +21,7 @@ bab = BinanceArbBot(client, starting_amount=0, expected_roi=0, wait_time=0)
 
 bab.test_time()
 
-if bab.get_time_diff() > 1000:
+if abs(bab.get_time_diff()) > 1000:
     print('sync computer time within 1000 millisecond of server time')
     raise Exception("computer time not synced with server time")
 
