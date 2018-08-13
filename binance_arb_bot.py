@@ -423,35 +423,38 @@ class BinanceArbBot:
                     except:
                         pass
 
-    def show_alt_balances():
+    def show_alt_balances(self):
         y = [(alt, self.get_asset_balance(alt)) for alt in self.alts]
         y = [(i[0], i[1]*self.get_bid_ask(i[0]+'ETH')[0]) for i in y if i[1]]
         return sorted(y, key=lambda f:f[1], reverse=True)
 
-    def show_eth_total(alts):
+    def show_eth_total(self, alts):
         x = self.get_asset_balance('ETH')
         for alt in alts:
             x += self.get_asset_balance(alt.upper())*self.get_bid_ask(alt.upper()+'ETH')[0]
         return x
 
-    def show_eth_value():
+    def show_eth_value(self):
         """
         ETH value of all alts and USDT, except BNB
         """
-        return show_eth_total(self.alts) + self.get_asset_balance("USDT")/self.get_bid_ask("ETHUSDT")[0]
+        return self.show_eth_total(self.alts) + self.get_asset_balance("USDT")/self.get_bid_ask("ETHUSDT")[0]
 
-    def show_value_info():
+    def show_value_info(self):
         print(self.show_eth_value())
         print(self.get_asset_balance("ETH"))
         print(self.get_asset_balance("BNB"))
         print(self.get_asset_balance("BTC"))
         print(self.get_bid_ask('ETHUSDT'))
 
-    def test_time():
+    def get_time_diff(self):
+        return  self.client.get_server_time()['serverTime']-int(time.time()*1000)
+
+    def test_time(self):
         """
         if asbolute value of diff is more than 1000, sync computer time
         """
-        print('server time - client time =', self.client.get_server_time()['serverTime']-int(time.time()*1000))
+        print('server time - client time =', self.get_time_diff())
             
 if __name__ == "__main__":
     
