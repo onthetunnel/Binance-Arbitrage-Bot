@@ -160,11 +160,12 @@ class BinanceArbBot:
             return float(x['free']) + float(x['locked'])
 
     def get_pivot(self):
+        
         """
-        of all base currencies common to both ETH and BTC markets not being being used in any open orders,
-        returns the one with biggest difference between ETH and BTC market
-        if using it in the trade sequence is expected to have higher roi than self.roi
-        price based on bid price on both markets
+        pivot is an alt coin that is traded on both ETH and BTC markets
+        for each pivot, an ev is computed from the following three part trade sequence: buy pivot with ETH at current best bid price, sell pivot to BTC at current best bid price, buy ETH with BTC at current best ask price
+        returns, as a string, the name of whichever pivot currently not being used in any open orders returns the highest ev when used as part of the above sequence, if that ev is at least as high as self.min_ev, otherwise returns False 
+        if returns pivot, sets self.occupied_alts[pivot] to 1
         """
         with self.pivot_lock:
             try:
