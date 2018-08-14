@@ -274,11 +274,7 @@ class BinanceArbBot:
             self.order_info_dict[s] = self.client.order_limit_sell(timeInForce='GTC', symbol=s, price=ask, quantity=qty)
             return None
         except:
-            text = 'sell args = ' + s + ' ' + str(ask) + ' '  + str(qty)
-            with print_lock:
-                print('unknown sell error', text)
-                print(self.trade_status_dict[s])
-        return 'error'
+           return 'error'
         
     def cancel_order(self, symbol):
         try:
