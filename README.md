@@ -1,6 +1,6 @@
 # Binance-Arbitrage-Bot
 
-Bot that arbitrages between the ETH and BTC markets on Binance with the goal of winning ETH. 
+Bot that arbitrages on Binance with the goal of earning ETH 
 
 # how it works
 
