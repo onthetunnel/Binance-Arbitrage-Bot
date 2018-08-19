@@ -36,8 +36,6 @@ ETH/USD = (296.28, 296.62)
 >>> bab.wait_time=4
 ```
 
-Also, much of the class `BinanceArbBot` could be useful as part of a bot that executes any type of strategy. 
-
 # results
 
 The bot was earning about .3 ETH a day, from Jan - May of this year. When it stopped earning, it was very sudden, one day to the next. Currently, I'm not running it myself. It's mostly likely to more or less break even, though could perhaps still eke out a profit in periods of exceptional volatility with `expected_roi` set very high (over .004).
