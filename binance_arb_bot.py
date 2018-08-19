@@ -135,7 +135,7 @@ class BinanceArbBot:
         
     def init_asset_balances(self, starting_amount=.02, symbol='XLMETH'):
         """
-        places buy order that doesn't fill, and then cancels, to get websocket response that gives sends balances of all assets
+        places buy order that doesn't fill, and then cancels, to get websocket response that updates asset balances
         account needs to have at least as much ETH as the value for starting_amount
         """
         symbol = symbol.upper()
