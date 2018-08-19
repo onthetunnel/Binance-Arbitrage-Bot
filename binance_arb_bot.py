@@ -160,7 +160,6 @@ class BinanceArbBot:
             return float(x['free']) + float(x['locked'])
 
     def get_pivot(self):
-        
         """
         pivot is an alt coin that is traded on both ETH and BTC markets
         for each pivot, an ev is computed from the following three part trade sequence: buy pivot with ETH at current best bid price, sell pivot to BTC at current best bid price, buy ETH with BTC at current best ask price
