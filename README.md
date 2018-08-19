@@ -40,6 +40,8 @@ ETH/USD = (296.28, 296.62)
 
 The bot was earning about .3 ETH a day, from Jan - May of this year. When it stopped earning, it was very sudden, one day to the next. Currently, I'm not running it myself. It's mostly likely to more or less break even, though could perhaps still eke out a profit in periods of exceptional volatility with `expected_roi` set very high (over .004). Also, much of the code could be used for a bot executing a different strategy. 
 
+# donate
+
 If you find any of this useful, please consider donating. 
 
 ETH: 0x4da564118a8585fd6e63a7c0066d51e7a16464d5
