@@ -19,13 +19,13 @@ ETH balance = 3.1970163
 BNB balance = 0.74899408
 BTC balance = 1.18e-06
 ETH/USD = (299.39, 299.42)
->>> bab.client.get_open_orders()
+>>> client.get_open_orders()
 []
->>> bab.client.get_open_orders()
+>>> client.get_open_orders()
 [{'symbol': 'BQXETH', 'orderId': 19051449, 'clientOrderId': 'B8vkMzvz2vCThAUMZ9m3UU', 'price': '0.00163950', 'origQty': '75.00000000', 'executedQty': '0.00000000', 'cummulativeQuoteQty': '0.00000000', 'status': 'NEW', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'stopPrice': '0.00000000', 'icebergQty': '0.00000000', 'time': 1534482186327, 'updateTime': 1534482186327, 'isWorking': True}, {'symbol': 'DATAETH', 'orderId': 4553749, 'clientOrderId': 'QLjbqyQ1G13FpTwhmMZp1p', 'price': '0.00010154', 'origQty': '1280.00000000', 'executedQty': '0.00000000', 'cummulativeQuoteQty': '0.00000000', 'status': 'NEW', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'stopPrice': '0.00000000', 'icebergQty': '0.00000000', 'time': 1534482185467, 'updateTime': 1534482185467, 'isWorking': True}]
 >>> bab.trade_status_dict['BQXETH']
 {'e': 'executionReport', 'E': 1534482187219, 's': 'BQXETH', 'c': 'zMIGEL5nTx7BxU1TFfavpI', 'S': 'BUY', 'o': 'LIMIT', 'f': 'GTC', 'q': '75.00000000', 'p': '0.00163950', 'P': '0.00000000', 'F': '0.00000000', 'g': -1, 'C': 'B8vkMzvz2vCThAUMZ9m3UU', 'x': 'CANCELED', 'X': 'CANCELED', 'r': 'NONE', 'i': 19051449, 'l': '0.00000000', 'z': '0.00000000', 'L': '0.00000000', 'n': '0', 'N': None, 'T': 1534482187220, 't': -1, 'I': 38813163, 'w': False, 'm': False, 'M': False, 'O': 1534482186327, 'Z': '0.00000000'}
->>> bab.client.get_open_orders()
+>>> client.get_open_orders()
 [{'symbol': 'DOCKETH', 'orderId': 1104526, 'clientOrderId': 'YcJJdPvIWmnqYodhuK3MuL', 'price': '0.00005496', 'origQty': '390.00000000', 'executedQty': '0.00000000', 'cummulativeQuoteQty': '0.00000000', 'status': 'NEW', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'stopPrice': '0.00000000', 'icebergQty': '0.00000000', 'time': 1534482229343, 'updateTime': 1534482229343, 'isWorking': True}]
 >>> bab.show_value_info()
 ETH value = 3.251064362740666
@@ -42,7 +42,7 @@ The bot was earning about .3 ETH a day, from Jan - May of this year. When it sto
 
 # donate
 
-If you find any of this useful, please consider donating. 
+If you find the code useful, please consider donating. 
 
 ETH: 0x4da564118a8585fd6e63a7c0066d51e7a16464d5
 
