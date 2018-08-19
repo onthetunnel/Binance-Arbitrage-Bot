@@ -436,11 +436,11 @@ class BinanceArbBot:
         return self.show_eth_total(self.alts) + self.get_asset_balance("USDT")/self.get_bid_ask("ETHUSDT")[0]
 
     def show_value_info(self):
-        print(self.show_eth_value())
-        print(self.get_asset_balance("ETH"))
-        print(self.get_asset_balance("BNB"))
-        print(self.get_asset_balance("BTC"))
-        print(self.get_bid_ask('ETHUSDT'))
+        print('ETH value =', self.show_eth_value())
+        print('ETH balance =', self.get_asset_balance("ETH"))
+        print('BNB balance =', self.get_asset_balance("BNB"))
+        print('BTC balance =', self.get_asset_balance("BTC"))
+        print('ETH/USD =', self.get_bid_ask('ETHUSDT'))
 
     def get_time_diff(self):
         return  self.client.get_server_time()['serverTime']-int(time.time()*1000)
