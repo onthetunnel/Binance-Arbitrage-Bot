@@ -9,7 +9,7 @@ In multiple threads, the bot loops a three part trade sequence which is 1) buy a
 # dependencies and use
 
 [python wrapper of the Binance API](https://github.com/sammchardy/python-binance) along with its dependencies. 
-You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). There are four attributes that should be user-defined, though default values are given. See the comments under `if __name__ == "__main__":` for this. The bot doesn't print anything to the screen, though it runs outside of the main thread, so you're free to call various methods from `BinanceArbBot` or `Client` to check on it. You can also try tweaking some of the user-defined attributes while it's running. Here's an example of what the shell could look like.
+You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). There are four attributes that should be user-defined, though default values are given. See the comments under `if __name__ == "__main__":` for this. The bot doesn't print anything to the screen, though it runs outside of the main thread, so you're free to call various methods from `BinanceArbBot` and `Client` to check on it. You can also try tweaking some of the user-defined attributes while it's running. Here's an example of what the shell could look like.
 
 ```
 >>> bab.min_ev=1.004
