@@ -9,7 +9,7 @@ In multiple threads, the bot loops a three part trade sequence which is 1) buy a
 # dependencies and use
 
 [python wrapper of the Binance API](https://github.com/sammchardy/python-binance) along with its dependencies. 
-You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). There are four attributes whose values should be user defined. See the comments under `if __name__ == "__main__":` for this. Also, the bot doesn't print anything to the screen, but it runs outside of the main thread, so you're free to use the shell. To see what orders it's placing, call `client.get_open_orders`, and to check on results, call `bab.get_value_info`. If you restart it, you may also want to call `bab.cancel_all_orders` You can also change any of the user-defined attributes in real time.
+You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). There are four attributes that should be user-defined, though default values are given. See the comments under `if __name__ == "__main__":` for this. The bot doesn't print anything to the screen, though it runs outside of the main thread, so you're free to use the shell to see what/how it's doing. To see what orders it's placing, call `client.get_open_orders`, and to check on results, call `bab.get_value_info`. If you restart it, you may want to call `bab.cancel_all_orders`, and the user-defined attributes can be changed in real-time. Here's an example of what the shell might look like while the bot's running.
 
 ```
 >>> bab.min_ev=1.004
@@ -36,9 +36,11 @@ ETH/USD = (296.28, 296.62)
 >>> bab.wait_time=4
 ```
 
+Also, much of the class `BinanceArbBot` could be useful as part of a bot that executes any type of strategy. 
+
 # results
 
-The bot was earning about .3 ETH a day, from Jan - May of this year. When it stopped earning, it was very sudden, one day to the next. Currently, I'm not running it myself. It's mostly likely to more or less break even, though could perhaps still eke out a profit in periods of exceptional volatility with `expected_roi` set very high (over .004). Also, much of the code could be used for a bot executing a different strategy. 
+The bot was earning about .3 ETH a day, from Jan - May of this year. When it stopped earning, it was very sudden, one day to the next. Currently, I'm not running it myself. It's mostly likely to more or less break even, though could perhaps still eke out a profit in periods of exceptional volatility with `expected_roi` set very high (over .004).
 
 # donate
 
