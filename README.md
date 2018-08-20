@@ -8,8 +8,8 @@ In multiple threads, the bot loops a three part trade sequence which is 1) buy a
 
 # dependencies and use
 
-[python wrapper of the Binance API](https://github.com/sammchardy/python-binance) along with its dependencies. 
-You need to copy and paste your binance api key and secret into where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). There are four attributes that should be user-defined, though default values are given. See the comments under `if __name__ == "__main__":` for this. The bot doesn't print anything to the screen, though it runs outside of the main thread, so you're free to call various methods from `BinanceArbBot` and `Client` to check on it. You can also try tweaking some of the user-defined attributes while it's running. Here's an example of what the shell could look like.
+Install the [python wrapper of the Binance API](https://github.com/sammchardy/python-binance) along with its dependencies. 
+You need to copy and paste your binance api key and secret where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH and some BNB for paying fees (have this option selected on your Binance account). There are four attributes that should be user-defined. See the comments under `if __name__ == "__main__":` for this. The bot doesn't print anything to the screen, though it runs outside of the main thread, so you're free to call various methods from `BinanceArbBot` and `Client` to check on it. You can also adjust the user-defined attributes except `thread_num` in real-time. Here's an example of what the shell could look like.
 
 ```
 >>> bab.min_ev=1.004
@@ -38,7 +38,7 @@ ETH/USD = (296.28, 296.62)
 
 # results
 
-The bot was consistently earning about .3 ETH a day, from Jan - May 2018, until one day it suddenly started more or less breaking even. This is still the case, though it could perhaps still eke out a small profit with `expected_roi` set very high (over .004) and in periods of exceptional volatility.
+The bot was consistently earning about .3 ETH a day, from Jan - May 2018, until one day it suddenly started to more or less break even. This is still the case, though perhaps it could still eke out a small profit with `expected_roi` set very high (over .004) and in periods of exceptional volatility.
 
 # donate
 
