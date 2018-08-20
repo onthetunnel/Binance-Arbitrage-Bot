@@ -38,7 +38,7 @@ ETH/USD = (296.28, 296.62)
 
 # results
 
-The bot was consistently earning about .3 ETH a day, from Jan - May 2018, until one day it suddenly started to more or less break even. This is still the case, though perhaps it could still eke out a small profit with `expected_roi` set very high (over .004) and in periods of exceptional volatility.
+The bot was consistently earning about .3 ETH a day, from Jan - May 2018, until one day it suddenly started to more or less break even. This is still the case, though perhaps it could still eke out a small profit with `expected_roi` set very high (over .004) and in periods of exceptionally high volatility.
 
 # donate
 
