@@ -4,13 +4,13 @@ Bot that arbitrages on Binance with the goal of earning ETH
 
 # how it works
 
-In multiple threads, the bot loops a three part trade sequence which is 1) buy an alt coin on the ETH market 2) sell that alt coin on the BTC market 3) buy back ETH on the BTC market, executing a type of strategy called trilateral arbitrage. It decides which alt coin to use based on current market data and a given minimum expected roi per trade. It makes all trades by placing limit orders at the current best bid. Frequently, the bot has to cancel the order corresponding to the first trade of the sequence and start over without it getting filled. This happens when it gets outbid, or the market data changes such that it no longer expects a profit from the current sequence. The other orders always get filled and this usually happens quickly.
+In multiple threads, the bot loops a three part trade sequence which is 1) buy an alt coin on the ETH market 2) sell that alt coin on the BTC market 3) buy back ETH on the BTC market, executing a type of strategy called trilateral arbitrage. It makes all trades by initally placing limit orders at the best bid price. For each alt coin common to both ETH and BTC markets, it calculates an ROI for the sequence using the best bid price for the first two orders, and the best ask price for the last one, and then chooses whichever alt coin not being used in any current orders yields the highest ROI, provided that ROI is at least as high as a minimum ROI that's defined by the user. The amount of the alt coin used is the lesser of an equivalent amount to a user-defined maximum ETH amount and the volume for the best bid on the BTC market, so the bot trades as much of the alt coin as possible with a high chance of selling it all quickly at the bid. Frequently, the bot has to cancel the order corresponding to the first trade of the sequence and start the loop over, but once it acquires an alt coin, it ensures that the other trades get executed and this usually happens quickly. 
 
 # dependencies and use
 
 [python wrapper of the Binance API](https://github.com/sammchardy/python-binance) along with its dependencies
 
-You need to copy and paste your binance api key and secret where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH. You should also have some BNB for paying fees. There are four attributes that should be user-defined (see the comments under `if __name__ == "__main__":` for this). While running, the bot won't print anything to the screen, but it runs outside of the main thread, so you can call various methods from `BinanceArbBot` and `Client` to see what's going on. You can also change the values of the user-defined attributes, except `thread_num`. Here's an example of my shell with the bot running:
+You need to copy and paste your binance api key and secret where it says `"copy and paste here"` at the top of the module, and have on Binance at least .1 ETH. You should also have some BNB for paying fees. There are four attributes that should be user-defined. See the comments under `if __name__ == "__main__":` for this. While running, the bot won't print anything to the screen, but it runs outside of the main thread, so you can call various methods from `BinanceArbBot` and `Client` to see what's going on. You can also change the values of the user-defined attributes, except `thread_num`. Here's an example of my shell with the bot running:
 ```
 >>> bab.min_ev=1.004
 >>> bab.show_value_info()
@@ -41,8 +41,6 @@ ETH/USD = (296.28, 296.62)
 The bot was consistently earning about .3 ETH a day, from Jan - May 2018, until one day it suddenly started to more or less break even. This is still the case, though perhaps it could still eke out a small profit with `expected_roi` set very high (over .004) and in periods of exceptionally high volatility.
 
 # donate
-
-If you find the code useful, please consider donating. 
 
 ETH: 0x4da564118a8585fd6e63a7c0066d51e7a16464d5
 
